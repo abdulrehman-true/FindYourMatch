@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AccountServiceService } from '../services/account-service.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-register',
@@ -10,7 +11,7 @@ export class RegisterComponent implements OnInit{
   // @Input() usersFromHomeComponent: any; // Means you're getting inpyt from a component in this variable
   @Output() cancelRegister = new EventEmitter(); // Because we want to emit something to the parent component, reverse of input 
 
-  constructor(private accountService: AccountServiceService)
+  constructor(private accountService: AccountServiceService, private toastr: ToastrService)
   {
 
   }
@@ -25,7 +26,7 @@ export class RegisterComponent implements OnInit{
       next: () => {
         this.cancel();
       },
-      error: error => console.log(error)
+      error: error => this.toastr.error(error.error)
     })
   }
 
