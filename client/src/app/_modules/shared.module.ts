@@ -13,7 +13,8 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
     NgxGalleryModule
   ],
   exports: [
-    ToastrModule
+    ToastrModule,
+    NgxGalleryModule
   ]
 })
 export class SharedModule { }
