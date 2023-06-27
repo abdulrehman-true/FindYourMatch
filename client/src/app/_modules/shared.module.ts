@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
-
-
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 
 @NgModule({
   declarations: [],
@@ -10,8 +9,8 @@ import { ToastrModule } from 'ngx-toastr';
     CommonModule,
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right'
-    }),
-    // BsDropdownModule.forRoot()
+    }),// BsDropdownModule.forRoot()
+    NgxGalleryModule
   ],
   exports: [
     ToastrModule
